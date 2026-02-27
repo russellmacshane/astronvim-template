@@ -20,10 +20,10 @@ return {
         "eslint_d",
 
         -- install debuggers
-        "debugpy",
+        -- "debugpy",
 
         -- install any other package
-        "tree-sitter-cli",
+        -- "tree-sitter-cli",
       },
     },
   },
