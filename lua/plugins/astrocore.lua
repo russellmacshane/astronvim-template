@@ -88,6 +88,15 @@ return {
           desc = "Copy diagnostic message",
         },
 
+        -- Copy Relative Path
+        ["<Leader>fy"] = {
+          function()
+            local path = vim.fn.expand "%:."
+            vim.fn.setreg("+", path)
+            vim.notify("Copied " .. path)
+          end,
+          desc = "Copy file path",
+        },
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
