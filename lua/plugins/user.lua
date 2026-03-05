@@ -26,25 +26,35 @@ return {
   -- customize dashboard options
   {
     "folke/snacks.nvim",
-    opts = {
-      dashboard = {
-        preset = {
-          header = table.concat({
-            "██████  ██    ██  ██████   ██████ ",
-            "██   ██ ██    ██ ██       ██      ",
-            "███████ ██    ██  ██████   ██████ ",
-            "██   ██ ██    ██      ██       ██ ",
-            "██   ██  ██████   ██████   ██████ ",
-            "",
-            "██████   ██████  ███████  ██████  ",
-            "██   ██ ██    ██    ███  ██    ██ ",
-            "██████  ██    ██   ███   ██    ██ ",
-            "██   ██ ██    ██  ███    ██    ██ ",
-            "██████   ██████  ███████  ██████  ",
-          }, "\n"),
-        },
-      },
-    },
+    opts = function(_, opts)
+      opts.dashboard.preset.header = table.concat({
+        "██████  ██    ██  ██████   ██████ ",
+        "██   ██ ██    ██ ██       ██      ",
+        "███████ ██    ██  ██████   ██████ ",
+        "██   ██ ██    ██      ██       ██ ",
+        "██   ██  ██████   ██████   ██████ ",
+        "",
+        "██████   ██████  ███████  ██████  ",
+        "██   ██ ██    ██    ███  ██    ██ ",
+        "██████  ██    ██   ███   ██    ██ ",
+        "██   ██ ██    ██  ███    ██    ██ ",
+        "██████   ██████  ███████  ██████  ",
+      }, "\n")
+      for _, key in ipairs(opts.dashboard.preset.keys or {}) do
+        if key.key == "s" then
+          key.action = "<Leader>S."
+          key.desc = "Load Dirsession "
+          break
+        end
+      end
+      table.insert(opts.dashboard.preset.keys, {
+        key = "q",
+        action = ":qa",
+        icon = "󰈆 ",
+        desc = "Quit ",
+      })
+      return opts
+    end,
   },
 
   --

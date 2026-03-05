@@ -1,10 +1,12 @@
 # Russ Clone of AstroNvim Template
 
-I've added a few things that I like. A few notable changes
+I've added a few tweaks to the default configuration that suite my needs and likes.
 
 - Added TS, Prettier, and ESLint
-- Added a stupid Russ Bozo override to the Dashboard
-- Added Tokyonight color theme as I like it
+- Added a Russ Bozo header override to the Dashboard
+- Added a quit option to the Dashboard
+- Added a Load Dirsession option to the Dashboard - I want to only load in the files that pertain to the folder I'm in.
+- Added the Tokyonight color scheme
 - Added `<Leader>ly` that yanks out a diagnostic message to easily send to claude
 - Added `Leader>fy` that just yanks the relative file path to easily send to claude
 
