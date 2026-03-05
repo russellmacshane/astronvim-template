@@ -1,5 +1,3 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -71,6 +69,20 @@ return {
             )
           end,
           desc = "Close buffer from tabline",
+        },
+
+        -- Copy disagnostic line to clipboard
+        ["<Leader>ly"] = {
+          function()
+            local diags = vim.diagnostic.get(0, { lnum = vim.fn.line "." - 1 })
+            if #diags > 0 then
+              vim.fn.setreg("+", diags[1].message)
+              vim.notify("Copied " .. diags[1].message)
+            else
+              vim.notify "No diagnostic on this line"
+            end
+          end,
+          desc = "Copy diagnostic message",
         },
 
         -- tables with just a `desc` key will be registered with which-key if it's installed
