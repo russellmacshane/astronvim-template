@@ -1,3 +1,13 @@
+# Russ Clone of AstroNvim Template
+
+I've added a few things that I like. A few notable changes
+
+- Added TS, Prettier, and ESLint
+- Added a stupid Russ Bozo override to the Dashboard
+- Added Tokyonight color theme as I like it
+- Added `<Leader>ly` that yanks out a diagnostic message to easily send to claude
+- Added `Leader>fy` that just yanks the relative file path to easily send to claude
+
 # AstroNvim Template
 
 **NOTE:** This is for AstroNvim v5+
