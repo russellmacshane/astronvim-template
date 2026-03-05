@@ -76,8 +76,11 @@ return {
           function()
             local diags = vim.diagnostic.get(0, { lnum = vim.fn.line "." - 1 })
             if #diags > 0 then
-              vim.fn.setreg("+", diags[1].message)
-              vim.notify("Copied " .. diags[1].message)
+              local path = vim.fn.expand "%:."
+              local lnum = vim.fn.line "."
+              local msg = string.format("%s:%d: %s", path, lnum, diags[1].message)
+              vim.fn.setreg("+", msg)
+              vim.notify("Copied " .. msg)
             else
               vim.notify "No diagnostic on this line"
             end
