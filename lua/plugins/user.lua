@@ -43,7 +43,7 @@ return {
       for _, key in ipairs(opts.dashboard.preset.keys or {}) do
         if key.key == "s" then
           key.action = "<Leader>S."
-          key.desc = "Load Dirsession "
+          key.desc = "Load Session "
           break
         end
       end
