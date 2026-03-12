@@ -9,6 +9,7 @@ I've added a few tweaks to the default configuration that suite my needs and lik
 - Added the Tokyonight color scheme
 - Added `<Leader>ly` that yanks out a diagnostic message to easily send to claude
 - Added `Leader>fy` that just yanks the relative file path to easily send to claude
+- Changed `grr` mapping to use Snacks popup instead of using Quicklist drawer
 
 # AstroNvim Template
 
